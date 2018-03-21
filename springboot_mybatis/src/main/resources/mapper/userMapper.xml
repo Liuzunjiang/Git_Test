@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dj.springboot_mybatis.mapper.UserMapper">
+
+
+	<select id="readUser" resultType="com.dj.springboot_mybatis.domain.User">
+		SELECT * FROM USER
+	</select>
+
+	<insert id="addUser" parameterType="com.dj.springboot_mybatis.domain.User">
+		INSERT INTO USER (username,password,sex) values(#{username},#{password},#{sex})
+	</insert>
+
+	<delete id="delUser" parameterType="Integer">
+		DELETE from USER WHERE id = #{i}
+	</delete>
+
+	<update id="updateUser" parameterType="com.dj.springboot_mybatis.domain.User">
+		update USER set username=#{username} where id=#{id}
+	</update>
+
+
+	<!--postManTest-->
+	<select id="readUser3" resultType="com.dj.springboot_mybatis.domain.User">
+		SELECT * FROM USER
+	</select>
+
+	<select id="findUserById3" resultType="com.dj.springboot_mybatis.domain.User">
+		SELECT * FROM USER WHERE id = #{id}
+	</select>
+
+	<insert id="addUser3" parameterType="com.dj.springboot_mybatis.domain.User">
+		INSERT INTO USER (username,password,sex)VALUES (#{username},#{password},#{sex})
+	</insert>
+
+	<delete id="delUserById" parameterType="Integer">
+		DELETE from USER WHERE id = #{id}
+	</delete>
+
+	<update id="updateUserById" parameterType="com.dj.springboot_mybatis.domain.User">
+		update USER set username=#{username} where id=#{id}
+	</update>
+
+
+	<select id="viewTest" resultType="com.dj.springboot_mybatis.domain.User">
+		SELECT * FROM USER
+	</select>
+
+
+
+
+
+</mapper>
